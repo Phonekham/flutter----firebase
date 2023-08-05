@@ -1,8 +1,13 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_instagram/resources/auth_methods.dart';
+import 'package:flutter_instagram/responsive/mobile_screen_layout.dart';
+import 'package:flutter_instagram/responsive/responsive_layout.dart';
+import 'package:flutter_instagram/responsive/web_screen_layout.dart';
 import 'package:flutter_instagram/screens/login_screen.dart';
 import 'package:flutter_instagram/utils/colors.dart';
+import 'package:flutter_instagram/utils/utils.dart';
 import 'package:flutter_instagram/widgets/text_field_input.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
@@ -36,45 +41,45 @@ class _SignupScreenState extends State<SignupScreen> {
       _isLoading = true;
     });
 
-    // // signup user using our authmethodds
-    // String res = await AuthMethods().signUpUser(
-    //     email: _emailController.text,
-    //     password: _passwordController.text,
-    //     username: _usernameController.text,
-    //     bio: _bioController.text,
-    //     file: _image!);
-    // // if string returned is sucess, user has been created
-    // if (res == "success") {
-    //   setState(() {
-    //     _isLoading = false;
-    //   });
-    //   // navigate to the home screen
-    //   if (context.mounted) {
-    //     Navigator.of(context).pushReplacement(
-    //       MaterialPageRoute(
-    //         builder: (context) => const ResponsiveLayout(
-    //           mobileScreenLayout: MobileScreenLayout(),
-    //           webScreenLayout: WebScreenLayout(),
-    //         ),
-    //       ),
-    //     );
-    //   }
-    // } else {
-    //   setState(() {
-    //     _isLoading = false;
-    //   });
-    //   // show the error
-    //   if (context.mounted) {
-    //     showSnackBar(context, res);
-    //   }
-    // }
+    // signup user using our authmethodds
+    String res = await AuthMethods().signUpUser(
+        email: _emailController.text,
+        password: _passwordController.text,
+        username: _usernameController.text,
+        bio: _bioController.text,
+        file: _image!);
+    // if string returned is sucess, user has been created
+    if (res == "success") {
+      setState(() {
+        _isLoading = false;
+      });
+      // navigate to the home screen
+      if (context.mounted) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => const ResponsiveLayout(
+              mobileScreenLayout: MobileScreenLayout(),
+              webScreenLayout: WebScreenLayout(),
+            ),
+          ),
+        );
+      }
+    } else {
+      setState(() {
+        _isLoading = false;
+      });
+      // show the error
+      if (context.mounted) {
+        showSnackBar(context, res);
+      }
+    }
   }
 
   selectImage() async {
-    //   Uint8List im = await pickImage(ImageSource.gallery);
-    //   // set state because we need to display the image we selected on the circle avatar
+    Uint8List im = await pickImage(ImageSource.gallery);
+    // set state because we need to display the image we selected on the circle avatar
     setState(() {
-      // _image = im;
+      _image = im;
     });
   }
 
