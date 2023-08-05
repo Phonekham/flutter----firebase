@@ -231,8 +231,8 @@ class _PostCardState extends State<PostCard> {
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => CommentsScreen(
-                        // postId: widget.snap['postId'].toString(),
-                        ),
+                      postId: widget.snap['postId'].toString(),
+                    ),
                   ),
                 ),
               ),
@@ -301,8 +301,8 @@ class _PostCardState extends State<PostCard> {
                   onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => CommentsScreen(
-                          // postId: widget.snap['postId'].toString(),
-                          ),
+                        postId: widget.snap['postId'].toString(),
+                      ),
                     ),
                   ),
                 ),
