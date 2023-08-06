@@ -10,7 +10,7 @@ import 'package:flutter_tiktok/views/screens/video_screen.dart';
 
 List pages = [
   VideoScreen(),
-  const SearchScreen(),
+  SearchScreen(),
   const AddVideoScreen(),
   const Text('Messages Screen'),
   ProfileScreen(uid: authController.user.uid),
