@@ -681,10 +681,10 @@ packages:
     dependency: "direct main"
     description:
       name: video_compress
-      sha256: e61292ee8733a7f1c11393d285df01f883e8d75d86a598da6d8cc9b9d662aa2d
+      sha256: dca175d0f5f05115a56eb4ba0f11ad99854b625b6ff41e61bc5ab42c36ceaa39
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.1"
+    version: "3.1.0"
   video_player:
     dependency: "direct main"
     description:
