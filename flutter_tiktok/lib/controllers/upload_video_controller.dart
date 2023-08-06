@@ -11,7 +11,7 @@ class UploadVideoController extends GetxController {
       MediaInfo? compressedVideo = await VideoCompress.compressVideo(
         videoPath,
         quality: VideoQuality.MediumQuality,
-        includeAudio: false,
+        includeAudio: true,
       );
       print(compressedVideo);
       return compressedVideo?.file;

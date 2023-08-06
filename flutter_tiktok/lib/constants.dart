@@ -9,7 +9,7 @@ import 'package:flutter_tiktok/views/screens/search_screen.dart';
 import 'package:flutter_tiktok/views/screens/video_screen.dart';
 
 List pages = [
-  const VideoScreen(),
+  VideoScreen(),
   const SearchScreen(),
   const AddVideoScreen(),
   const Text('Messages Screen'),
